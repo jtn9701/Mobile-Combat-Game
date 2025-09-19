@@ -60,6 +60,24 @@ class Entity {
         return this.#healthStat <= 0;
    }
 
+   healHP(numToIncreaseHealthBy) {
+        this.#healthStat += numToIncreaseHealthBy;
+   }
 
+   /**
+    * @returns {object} Map of entity stats
+    */
+   getStats() {
+        return {
+            healthStat : this.#healthStat,
+            strengthStat : this.#strengthStat,
+            wisdomStat : this.#wisdomStat,
+            manaStat : this.#manaStat,
+            defenseStat : this.#defenseStat,
+            magicDefenseStat : this.#magicDefenseStat,
+            speedStat : this.#speedStat,
+            evasionStat : this.#evasionStat,
+        };
+   }
 
 }
