@@ -1,11 +1,17 @@
 import { Text, View } from 'react-native';
+import { globalStyles } from '../components/style-sheets/global-styles';
+import { mainMenuStyles } from '../components/style-sheets/screen-styles';
 
-const main_menu_screen =  function MainMenuScreen() {
+const mainMenuScreen =  function MainMenuScreen() {
     return (
-        <View>
-            <Text>This is the Main Menu Screen</Text>
+        <View style={[globalStyles.container, globalStyles.background, mainMenuStyles.backgroundImage]}>
+            <View style={[globalStyles.container, globalStyles.borderForTesting, mainMenuStyles.modal]}>
+                <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>How To Play</Text>
+                <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>Play</Text>
+                <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>Credits</Text>
+            </View>
         </View>
     );
 }
 
-export default main_menu_screen;
+export default mainMenuScreen;
