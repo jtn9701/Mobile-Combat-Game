@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {combat_arena_screen} from './screens/combat-arena';
 
 export default function App() {
   return (
