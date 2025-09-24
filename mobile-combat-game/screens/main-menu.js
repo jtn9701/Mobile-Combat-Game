@@ -15,9 +15,3 @@ const mainMenuScreen =  function MainMenuScreen() {
     );
 }
 export default mainMenuScreen;
-
-/*
-    <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>How To Play</Text>
-    <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>Play</Text>
-    <Text style={[mainMenuStyles.navButtons, globalStyles.borderForTesting]}>Credits</Text>
-*/

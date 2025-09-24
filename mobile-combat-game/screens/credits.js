@@ -2,7 +2,7 @@ import { Text, View, Button } from 'react-native';
 import { globalStyles } from '../components/style-sheets/global-styles';
 import { screenStyles } from '../components/style-sheets/screen-styles';
 
-const credits_screen =  function CreditsScreen() {
+const creditsScreen =  function CreditsScreen() {
     // TODO: Turn the inner View into a custom component containing a list of components
     return (
             <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
@@ -16,4 +16,4 @@ const credits_screen =  function CreditsScreen() {
     );
 }
 
-export default credits_screen;
+export default creditsScreen;

@@ -29,6 +29,23 @@ export const screenStyles = StyleSheet.create({
         textFont: {
             fontSize: 20
         }
+    },
+    statAllocationStyles : {
+        modal: {
+            flex: 0.75,
+            width: '75%',
+            justifyContent: 'space-evenly'
+        },
+        statBox: {
+            flexDirection: 'row',
+            flex: 0.05,
+            width: '95%',
+            justifyContent: 'space-around',
+            alignItems: 'center'
+        },
+        titleText: {
+            fontSize: 20
+        }
     }
 })
 
