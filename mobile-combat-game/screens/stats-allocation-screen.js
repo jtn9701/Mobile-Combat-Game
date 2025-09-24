@@ -13,7 +13,7 @@ import { screenStyles } from '../components/style-sheets/screen-styles';
     evasionStat;
 */
 
-const statsAllocationScreen =  function StatsAllocationScreen() {
+const statsAllocationScreen =  function StatsAllocationScreen(combatScreenValueSetter) {
     // Make custom component
     return (
         <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
@@ -61,6 +61,7 @@ const statsAllocationScreen =  function StatsAllocationScreen() {
                     <Text>Evasion: 0</Text>
                     <Button title='+'/>
                 </View>
+                <Button title='Continue' onPress={() => {combatScreenValueSetter(1)}}/>
             </View>
         </View>
     );
