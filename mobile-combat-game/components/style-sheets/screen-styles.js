@@ -30,7 +30,7 @@ export const screenStyles = StyleSheet.create({
             fontSize: 20
         }
     },
-    statAllocationStyles : {
+    statAllocationStyles: {
         modal: {
             flex: 0.75,
             width: '75%',
@@ -45,6 +45,35 @@ export const screenStyles = StyleSheet.create({
         },
         titleText: {
             fontSize: 20
+        }
+    },
+    combatArenaStyles: {
+        container: {
+            flex: 1,
+            backgroundColor: '#fff',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            paddingBottom: 100
+        },
+        backgroundImage: {
+            // TODO: replace with background image
+            backgroundColor: '#1084e4ff'
+        },
+        monsterAreaContainer: {
+            flex: 1,
+            backgroundColor: '#fff',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            justifyContent: 'flex-end',
+            paddingBottom: 100
+        },
+        combatActionContainer: {
+            flex: .4,
+            backgroundColor: '#fff',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
         }
     }
 })
