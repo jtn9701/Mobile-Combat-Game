@@ -1,26 +1,26 @@
 import { useState } from "react";
 
-import mainMenuScreen from './main-menu';
-import creditsScreen from './credits';
-import howToPlayScreen from './how-to-play';
+import MainMenuScreen from './main-menu';
+import CreditsScreen from './credits';
+import HowToPlayScreen from './how-to-play';
 
 // TODO: use "non-fake" method to go to play stats-allocation-screen
-const landingPage = () => {
+const LandingPage = ({navigation}) => {
     let [currentScreen, setCurrentScreen] = useState(0);
 
     if (currentScreen === 0) {
         return (
-            mainMenuScreen(setCurrentScreen)
+            MainMenuScreen({navigation}, setCurrentScreen)
         )
     } else if (currentScreen === 1) {
         return (
-            howToPlayScreen(setCurrentScreen)
+            HowToPlayScreen(setCurrentScreen)
         )
     } else if (currentScreen === 2) {
         return (
-            creditsScreen(setCurrentScreen)
+            CreditsScreen(setCurrentScreen)
         )
     }
 }
 
-export default landingPage
+export default LandingPage

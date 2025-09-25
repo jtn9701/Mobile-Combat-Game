@@ -4,7 +4,7 @@ import statsAllocationScreen from "./stats-allocation-screen";
 import combatArenaScreen from "./combat-arena";
 
 // TODO: use "non-fake" method to go to play stats-allocation-screen
-const combatLandingPage = () => {
+const CombatLandingPage = () => {
     let [currentCombatScreen, setCurrentCombatScreen] = useState(0);
 
     if (currentCombatScreen === 0) {
@@ -18,4 +18,4 @@ const combatLandingPage = () => {
     }
 }
 
-export default combatLandingPage
+export default CombatLandingPage
