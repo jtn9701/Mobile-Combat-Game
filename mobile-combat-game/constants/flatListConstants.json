@@ -1,0 +1,35 @@
+{
+    "MAIN_MENU_FLATLIST_DATA": [
+        {
+            "title": "How To Play"
+        },
+        {
+            "title": "Play"
+        },
+        {
+            "title": "Credits"
+        }
+    ],
+    "HOW_TO_PLAY_FLATLIST_DATA": [
+        {
+            "title": " Step 1: Press Play"
+        },
+        {
+            "title": " Step 2: Allocate stat points"
+        },
+        {
+            "title": " Step 3: Fight!"
+        }
+    ],
+    "CREDITS_FLATLIST_DATA": [
+        {
+            "title": "Created By: Jason Nguyen"
+        },
+        {
+            "title": "Art By: None"
+        },
+        {
+            "title": "Music By: None"
+        }
+    ]
+}

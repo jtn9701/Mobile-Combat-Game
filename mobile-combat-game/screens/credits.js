@@ -1,19 +1,13 @@
-import { Text, View, Button } from 'react-native';
-import { globalStyles } from '../components/style-sheets/global-styles';
-import { screenStyles } from '../components/style-sheets/screen-styles';
+import InformationModal from '../components/InformationModal';
+import constants from './../constants/flatListConstants.json';
 
-const creditsScreen =  function CreditsScreen(screenValueSetter) {
-    // TODO: Turn the inner View into a custom component containing a list of components
+const CreditsScreen =  ({setCurrentScreen}) => {
     return (
-            <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
-                <View style={[globalStyles.container, globalStyles.borderForTesting, screenStyles.creditsStyles.modal]}>
-                    <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Created By: Jason Nguyen</Text>
-                    <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Art By: Test</Text>
-                    <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Music By: Test</Text>
-                </View>
-                <Button title='Exit' onPress={() => {screenValueSetter(0)}}/>
-            </View>
+        <InformationModal
+            data={constants.CREDITS_FLATLIST_DATA}
+            screenValueSetter={setCurrentScreen}
+        />
     );
 }
 
-export default creditsScreen;
+export default CreditsScreen;

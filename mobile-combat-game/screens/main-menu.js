@@ -1,18 +1,13 @@
-import { View, Button } from 'react-native';
-import { globalStyles } from '../components/style-sheets/global-styles';
-import { screenStyles } from '../components/style-sheets/screen-styles';
-import combatArenaScreen from './combat-arena';
+import MainMenuModal from '../components/MainMenuModal';
+import constants from './../constants/flatListConstants.json';
 
-const mainMenuScreen =  function MainMenuScreen({navigation}, screenValueSetter) {
-    // TODO: Turn the inner View into a custom component containing a list of components
+const MainMenuScreen = ({navigation, setCurrentScreen}) => {
     return (
-        <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
-            <View style={[globalStyles.container, globalStyles.borderForTesting, screenStyles.mainMenuStyles.modal]}>
-                <Button title='How To Play' onPress={() => {screenValueSetter(1)}}/>
-                <Button title='Play' onPress={ () => {navigation.navigate("combat-landing-page")}}/>
-                <Button title='Credits' onPress={() => {screenValueSetter(2)}}/>
-            </View>
-        </View>
+        <MainMenuModal
+            data={constants.MAIN_MENU_FLATLIST_DATA}
+            setCurrentScreen={setCurrentScreen} 
+            navigation={navigation}
+        />
     );
 }
-export default mainMenuScreen;
+export default MainMenuScreen;

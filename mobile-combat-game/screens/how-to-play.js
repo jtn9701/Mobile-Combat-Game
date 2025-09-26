@@ -1,18 +1,13 @@
-import { Text, View, Button } from 'react-native';
-import { globalStyles } from '../components/style-sheets/global-styles';
-import { screenStyles } from '../components/style-sheets/screen-styles';
+import InformationModal from '../components/InformationModal';
+import constants from './../constants/flatListConstants.json';
 
-const howToPlayScreen =  function HowToPlayScreen(screenValueSetter) {
+const HowToPlayScreen =  ({setCurrentScreen}) => {
     return (
-        <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
-            <View style={[globalStyles.container, globalStyles.borderForTesting, screenStyles.creditsStyles.modal]}>
-                <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Step 1: Press Play</Text>
-                <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Step 2: Allocate stat points</Text>
-                <Text style={[screenStyles.mainMenuStyles.navButtons, globalStyles.borderForTesting, screenStyles.creditsStyles.textFont]}>Step 3: Fight!</Text>
-            </View>
-            <Button title='Exit' onPress={() => {screenValueSetter(0)}}/>
-        </View>
+        <InformationModal
+            data={constants.HOW_TO_PLAY_FLATLIST_DATA}
+            screenValueSetter={setCurrentScreen}
+        />
     );
 }
 
-export default howToPlayScreen;
+export default HowToPlayScreen;
