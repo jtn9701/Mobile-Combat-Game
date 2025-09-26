@@ -31,5 +31,25 @@
         {
             "title": "Music By: None"
         }
+    ],
+    "STATS_MODAL_FLATLIST_DATA": [
+        {
+            "title": "Health"
+        },
+        {
+            "title": "Strength"
+        },
+        {
+            "title": "Wisdom"
+        },
+        {
+            "title": "Mana"
+        },
+        {
+            "title": "Physical Defense"
+        },
+        {
+            "title": "Magic Defense"
+        }
     ]
 }

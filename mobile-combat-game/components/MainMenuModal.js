@@ -1,4 +1,4 @@
-import { View, FlatList, Button, Text } from 'react-native';
+import { View, FlatList, Button } from 'react-native';
 
 import { globalStyles } from './style-sheets/global-styles';
 import { screenStyles } from './style-sheets/screen-styles';

@@ -6,18 +6,14 @@ class Entity {
     #manaStat;
     #defenseStat;
     #magicDefenseStat;
-    #speedStat;
-    #evasionStat;
 
-    constructor({healthStat, strengthStat, wisdomStat, manaStat, defenseStat, magicDefenseStat, speedStat, evasionStat}) {
+    constructor({healthStat, strengthStat, wisdomStat, manaStat, defenseStat, magicDefenseStat}) {
         this.#healthStat = healthStat;
         this.#strengthStat = strengthStat;
         this.#wisdomStat = wisdomStat;
         this.#manaStat = manaStat;
         this.#defenseStat = defenseStat;
         this.#magicDefenseStat = magicDefenseStat;
-        this.#speedStat = speedStat;
-        this.#evasionStat = evasionStat;
     }
     
     /**
@@ -74,9 +70,7 @@ class Entity {
             wisdomStat : this.#wisdomStat,
             manaStat : this.#manaStat,
             defenseStat : this.#defenseStat,
-            magicDefenseStat : this.#magicDefenseStat,
-            speedStat : this.#speedStat,
-            evasionStat : this.#evasionStat,
+            magicDefenseStat : this.#magicDefenseStat
         };
    }
 
