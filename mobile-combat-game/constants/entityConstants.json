@@ -1,0 +1,13 @@
+{   
+    "STAT_INCREMENT" : 1,
+    "MAX_ALLOCATE_POINTS": 20,
+    "DEFAULT_PLAYER_STATS": {
+        "healthStat": 20,
+        "strengthStat": 5,
+        "wisdomStat": 5,
+        "manaStat": 0,
+        "defenseStat": 0,
+        "magicDefenseStat": 0,
+        "pointsToAllocate": 20
+    }
+}
