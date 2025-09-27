@@ -1,4 +1,5 @@
 import { useState, useReducer } from "react";
+import { Text } from "react-native";
 
 import StatsAllocationScreen from "./stats-allocation-screen";
 import CombatArenaScreen from "./combat-arena";
@@ -38,10 +39,16 @@ const CombatLandingPage = () => {
         return (
             <StatsAllocationScreen setCurrentCombatScreen={setCurrentCombatScreen} state={playerState} dispatch={dispatch}/>
         )
-    } else {
+    } else if (currentCombatScreen === 1){
         return (
-            <CombatArenaScreen playerState={playerState}/>
+            <CombatArenaScreen playerState={playerState} setCurrentCombatScreen={setCurrentCombatScreen}/>
         )
+    } else if (currentCombatScreen === 2) {
+        // Win Screen
+        return <Text>You Win!</Text>
+    } else {
+        // Lose Screen
+        return <Text>You Lose!</Text>
     }
 }
 
