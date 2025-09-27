@@ -6,7 +6,7 @@ import entityConstants from "./../constants/entityConstants.json"
 
 const CombatLandingPage = () => {
     let [currentCombatScreen, setCurrentCombatScreen] = useState(0);
-    const [state, dispatch] = useReducer(reducer, entityConstants.DEFAULT_PLAYER_STATS)
+    const [playerState, dispatch] = useReducer(reducer, entityConstants.DEFAULT_PLAYER_STATS)
 
     function reducer(state, action) {
         // TODO: Make function to clamp values to not go past min value
@@ -36,11 +36,11 @@ const CombatLandingPage = () => {
 
     if (currentCombatScreen === 0) {
         return (
-            <StatsAllocationScreen setCurrentCombatScreen={setCurrentCombatScreen} state={state} dispatch={dispatch}/>
+            <StatsAllocationScreen setCurrentCombatScreen={setCurrentCombatScreen} state={playerState} dispatch={dispatch}/>
         )
     } else {
         return (
-            CombatArenaScreen(setCurrentCombatScreen)
+            <CombatArenaScreen playerState={playerState}/>
         )
     }
 }

@@ -19,6 +19,7 @@ class Entity {
     /**
      * Decreases this.healthStat based on the attacker's strengthStat
      * @param {int} strengthStat - strenghtStat of attacker
+     * @returns {int} modified health stat
      */
     takePhysicalDamage({strengthStat}) {
         if (strengthStat <= this.#defenseStat) {
@@ -26,11 +27,13 @@ class Entity {
         } else {
             this.#healthStat -= Math.floor(strengthStat - (0.5 * this.#defenseStat));
         }
+        return this.#healthStat;
     }
 
     /**
      * Decreases this.healthStat based on the attacker's wisdomStat
      * @param {int} wisdomStat - wisdomStat of attacker
+     * @returns {int} modified health stat
      */
     takeMagicDamage({wisdomStat}) {
         if (wisdomStat <= this.#magicDefenseStat) {
@@ -38,14 +41,17 @@ class Entity {
         } else {
             this.#healthStat -= Math.floor(wisdomStat - (0.5 * this.#magicDefenseStat));
         }
+        return this.#healthStat;
     }
     /**
      * Decreases this.healthStat based on the Attacker's strengthStat and wisdomStat
      * @param {int} strenghtStat - strengthStat of Attacker
      * @param {int} wisdomStat - wisdomStat of Attacker 
+     * @returns {int} modified health stat
      */
     takeTrueDamage({strengthStat, wisdomStat}) {
         this.#healthStat -= (strengthStat + wisdomStat);
+        return this.#healthStat;
     }
 
    /**
@@ -58,6 +64,16 @@ class Entity {
 
    healHP(numToIncreaseHealthBy) {
         this.#healthStat += numToIncreaseHealthBy;
+        return this.#healthStat
+   }
+
+   /**
+    * Decrements this.manaStat
+    * @returns {int} modified mana stat
+    */
+   decrementMana() {
+        this.#manaStat--;
+        return this.#manaStat
    }
 
    /**
@@ -75,3 +91,5 @@ class Entity {
    }
 
 }
+
+export default Entity

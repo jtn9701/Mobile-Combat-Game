@@ -9,5 +9,14 @@
         "defenseStat": 0,
         "magicDefenseStat": 0,
         "pointsToAllocate": 20
+    },
+    "DEFAULT_ENEMY_STATS": {
+        "healthStat": 20,
+        "strengthStat": 5,
+        "wisdomStat": 5,
+        "manaStat": 0,
+        "defenseStat": 2,
+        "magicDefenseStat": 2,
+        "name": "Enemy"
     }
 }

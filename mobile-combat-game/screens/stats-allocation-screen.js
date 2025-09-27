@@ -1,14 +1,5 @@
 import StatsModal from './../components/StatsModal'
 import constants from './../constants/flatListConstants.json';
-/*
-    stats to add
-    healthStat;
-    strengthStat;
-    wisdomStat;
-    manaStat;
-    defenseStat;
-    magicDefenseStat;
-*/
 
 const statsAllocationScreen =  function StatsAllocationScreen({setCurrentCombatScreen, state, dispatch}) {
     return (
