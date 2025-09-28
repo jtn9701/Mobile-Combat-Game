@@ -168,7 +168,8 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 <Text style={screenStyles.statAllocationStyles.titleText}>{gameOutcome}</Text>
                 <Text style={screenStyles.statAllocationStyles.titleText}>Level: {playerLevel}</Text>
                 <Text style={screenStyles.statAllocationStyles.titleText}>Points Remaining: {state.pointsToAllocate}</Text>
-                <Button title='Continue' 
+                <Button 
+                    title='Continue' 
                     onPress={() => {
                         if (state.pointsToAllocate === 0){
                             setCurrentCombatScreen(1)
