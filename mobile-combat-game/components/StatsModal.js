@@ -4,6 +4,8 @@ import { screenStyles } from './style-sheets/screen-styles';
 
 import entityConstants from "./../constants/entityConstants.json"
 
+import StatButton from './StatButton';
+
 const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, playerLevel, gameOutcome}) => {
     const renderModalItem = ({item}) => {
         const statContainerRenderer = () =>{
@@ -19,7 +21,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Health":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "healthStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.healthStat, entityConstants.DEFAULT_PLAYER_STATS.healthStat)){
@@ -28,7 +30,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.healthStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "healthStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -40,7 +42,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Strength":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "strengthStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.strengthStat, entityConstants.DEFAULT_PLAYER_STATS.strengthStat)){
@@ -49,7 +51,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.strengthStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "strengthStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -61,7 +63,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Wisdom":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "wisdomStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.wisdomStat, entityConstants.DEFAULT_PLAYER_STATS.wisdomStat)){
@@ -70,7 +72,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.wisdomStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "wisdomStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -82,7 +84,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Mana":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "manaStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.manaStat)){
@@ -91,7 +93,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.manaStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "manaStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -103,7 +105,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Physical Defense":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "defenseStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.defenseStat)){
@@ -112,7 +114,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.defenseStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "defenseStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -124,7 +126,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 case "Magic Defense":
                     return (
                         <>
-                            <Button title='-' 
+                            <StatButton title={'-'} 
                                 onPress={() => {
                                     dispatch( { statToChange: "magicDefenseStat", amount: -entityConstants.STAT_INCREMENT } );
                                     if (isNotCurrentStatAtMinValue(state.magicDefenseStat)){
@@ -133,7 +135,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                                 }}
                             />
                             <Text>{item.title}: {state.magicDefenseStat}</Text>
-                            <Button title='+'  
+                            <StatButton title={'+'}  
                                 onPress={() => {
                                     if (isPointsRemainingAboveZero()) {
                                         dispatch( { statToChange: "magicDefenseStat", amount: entityConstants.STAT_INCREMENT } ) ;
@@ -156,7 +158,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
     }
     
         return (
-            <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
+        <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
             <View style={[globalStyles.container, globalStyles.borderForTesting, screenStyles.statAllocationStyles.modal]}>
                 <View>
                     <Text style={screenStyles.statAllocationStyles.titleText}>Stat Allocation</Text>
