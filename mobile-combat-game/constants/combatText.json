@@ -1,6 +1,8 @@
 {
-    "PLAYER_DOES_DAMAGE": "You do damage to the monster.",
+    "PLAYER_DOES_DAMAGE": "You did damage to the monster.",
     "PLAYER_TAKES_DAMAGE": "You took damage!",
-    "ENEMY_DOES_DAMAGE": "The enemy attacks you!",
-    "ENEMY_TAKES_DAMAGE": "The enemy took damage"
+    "ENEMY_DOES_DAMAGE": "The enemy attacked you!",
+    "ENEMY_TAKES_DAMAGE": "The enemy took damage",
+    "WIN": "You won!",
+    "LOSE": "You lost!"
 }

@@ -1,6 +1,6 @@
 {   
     "STAT_INCREMENT" : 1,
-    "MAX_ALLOCATE_POINTS": 20,
+    "POINTS_PER_LEVEL": 5,
     "DEFAULT_PLAYER_STATS": {
         "healthStat": 20,
         "strengthStat": 5,
@@ -8,7 +8,7 @@
         "manaStat": 0,
         "defenseStat": 0,
         "magicDefenseStat": 0,
-        "pointsToAllocate": 20
+        "pointsToAllocate": 5
     },
     "DEFAULT_ENEMY_STATS": {
         "healthStat": 20,

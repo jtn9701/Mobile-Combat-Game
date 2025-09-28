@@ -1,28 +1,34 @@
 import { Text, View, Button } from 'react-native';
-import { use, useState } from 'react';
+import { useState } from 'react';
 
 import { screenStyles } from '../components/style-sheets/screen-styles';
 import { globalStyles } from '../components/style-sheets/global-styles';
 
+import CombatLog from '../components/CombatLog';
 import entityConstants from "./../constants/entityConstants.json"
 import combatText from "./../constants/combatText.json"
 import Entity from '../classes/entity';
 
-const CombatArenaScreen = ({playerState, setCurrentCombatScreen}) => {
+const CombatArenaScreen = ({playerState, setCurrentCombatScreen, playerLevel, playerLevelSetter, gameOutcomeSetter }) => {
     let [player, playerModifier] = useState(new Entity(playerState));
     let [enemy, enemyModifier] = useState(new Entity(entityConstants.DEFAULT_ENEMY_STATS))
     let [combatLogs, combatLogsModifier] = useState(["An enemy appeared. Fight It"])
 
     function checkIfGameOver(playerHP, enemyHP) {
-        let goToLoseScreen = () => setCurrentCombatScreen(3);
-        let goToWinScreen = () => setCurrentCombatScreen(2);
+        let goToStatsScreen = () => setCurrentCombatScreen(0);
+        let incrementLevel = () => playerLevelSetter(++playerLevel)
+        let saveOutcomeText = (outcomeText) => gameOutcomeSetter(outcomeText)
 
         if (playerHP <= 0) {
-            goToLoseScreen();
+            goToStatsScreen();
+            incrementLevel();
+            saveOutcomeText(combatText.LOSE);
         }
 
         if (enemyHP <= 0) {
-            goToWinScreen();
+            goToStatsScreen();
+            incrementLevel();
+            saveOutcomeText(combatText.WIN);
         }
     }
 
@@ -51,6 +57,7 @@ const CombatArenaScreen = ({playerState, setCurrentCombatScreen}) => {
                 <Text style={globalStyles.borderForTesting}>HP: {enemy.getStats().healthStat}</Text>
                 <Text style={globalStyles.borderForTesting}>Strength: {enemy.getStats().strengthStat}</Text>
                 <Text style={globalStyles.borderForTesting}>Wisdom: {enemy.getStats().wisdomStat}</Text>
+                <CombatLog data={combatLogs}/>
             </View>
             <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.combatActionContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation]}>
                 <Text>Your HP: {player.getStats().healthStat}</Text>

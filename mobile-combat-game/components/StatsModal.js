@@ -4,7 +4,7 @@ import { screenStyles } from './style-sheets/screen-styles';
 
 import entityConstants from "./../constants/entityConstants.json"
 
-const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch}) => {
+const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, playerLevel, gameOutcome}) => {
     const renderModalItem = ({item}) => {
         const statContainerRenderer = () =>{
             switch(item.title){
@@ -130,6 +130,8 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch}) =
                     <Text style={screenStyles.statAllocationStyles.titleText}>Stat Allocation</Text>
                 </View>
                 <FlatList data={data} renderItem={renderModalItem}/>
+                <Text style={screenStyles.statAllocationStyles.titleText}>{gameOutcome}</Text>
+                <Text style={screenStyles.statAllocationStyles.titleText}>Level: {playerLevel}</Text>
                 <Text style={screenStyles.statAllocationStyles.titleText}>Points Remaining: {state.pointsToAllocate}</Text>
                 <Button title='Continue' onPress={() => {setCurrentCombatScreen(1)}}/>
             </View>
