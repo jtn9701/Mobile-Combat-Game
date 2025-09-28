@@ -34,11 +34,11 @@ export const screenStyles = StyleSheet.create({
         modal: {
             flex: 0.75,
             width: '75%',
-            justifyContent: 'space-evenly'
+            justifyContent: 'space-evenly',
         },
         statBox: {
             flexDirection: 'row',
-            flex: 0.05,
+            flex: 0.15,
             width: '95%',
             justifyContent: 'space-around',
             alignItems: 'center'

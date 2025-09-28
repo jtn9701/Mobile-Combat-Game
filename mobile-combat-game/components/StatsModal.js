@@ -161,6 +161,7 @@ const StatsAllocationModal = ({data, setCurrentCombatScreen, state, dispatch, pl
                 <View>
                     <Text style={screenStyles.statAllocationStyles.titleText}>Stat Allocation</Text>
                 </View>
+                <Text>Spend points to become stronger</Text>
                 <FlatList data={data} renderItem={renderModalItem}/>
                 <Text style={screenStyles.statAllocationStyles.titleText}>{gameOutcome}</Text>
                 <Text style={screenStyles.statAllocationStyles.titleText}>Level: {playerLevel}</Text>

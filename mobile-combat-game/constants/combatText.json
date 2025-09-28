@@ -3,6 +3,7 @@
     "PLAYER_TAKES_DAMAGE": "You took damage!",
     "ENEMY_DOES_DAMAGE": "The enemy attacked you!",
     "ENEMY_TAKES_DAMAGE": "The enemy took damage",
+    "PLAYER_HEALS": "You healed!",
     "WIN": "You won!",
     "LOSE": "You lost!"
 }
