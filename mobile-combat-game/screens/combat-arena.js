@@ -81,7 +81,7 @@ const CombatArenaScreen = ({playerState, setCurrentCombatScreen, playerLevel, pl
 
     return (
         <View style ={[screenStyles.combatArenaStyles.container, globalStyles.background, screenStyles.combatArenaStyles.backgroundImage]}>
-            <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.monsterAreaContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation]}>
+            <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.monsterAreaContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation, {backgroundColor: '#eb9898ff'}]}>
                 <Image style={{height: 200, width: 200}} source={require('./../assets/images/goblin.png')}/>
                 <View style={[globalStyles.borderForTesting, {width: '50%', marginTop: 5}]}>
                     <Text style={{textAlign: 'center'}}>GOBLIN</Text>
@@ -91,16 +91,16 @@ const CombatArenaScreen = ({playerState, setCurrentCombatScreen, playerLevel, pl
                 </View>
                 <CombatLog data={combatLogs}/>
             </View>
-            <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.combatActionContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation]}>
+            <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.combatActionContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation, {backgroundColor: '#88f384ff'}]}>
                 <Text>Your HP: {player.getStats().healthStat}</Text>
                 <Text>Your Mana: {player.getStats().manaStat}</Text>
                 <Text>Your Strength: {player.getStats().strengthStat}</Text>
                 <Text>Your Wisdom: {player.getStats().wisdomStat}</Text>
-                <View style={{flexDirection: 'row'}}>
-                    <Button title='Attack with Sword' onPress={() => turnOfAttacks("physical")}/>
-                    <Button title='Attack with Magic' onPress={() => turnOfAttacks("magic")}/>
-                </View>
-                <Button title='Heal' onPress={() => turnOfAttacks("heal")}/>
+                    <View style={{flexDirection: 'row', padding: 2}}>
+                        <Button title='Attack with Sword' onPress={() => turnOfAttacks("physical")}/>
+                        <Button title='Attack with Magic' onPress={() => turnOfAttacks("magic")}/>
+                    </View>
+                    <Button title='Heal' onPress={() => turnOfAttacks("heal")}/>
             </View>
         </View>
     );
