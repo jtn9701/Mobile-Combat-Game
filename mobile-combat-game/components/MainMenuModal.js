@@ -1,4 +1,4 @@
-import { View, FlatList, Button, Image } from 'react-native';
+import { Text, View, FlatList, Button, Image } from 'react-native';
 
 import { globalStyles } from './style-sheets/global-styles';
 import { screenStyles } from './style-sheets/screen-styles';
@@ -20,6 +20,7 @@ const MainMenuModal = ({data, navigation, setCurrentScreen}) => {
     return (
         <View style={[globalStyles.container, globalStyles.background, screenStyles.mainMenuStyles.backgroundImage]}>
             <View style={[globalStyles.container, globalStyles.borderForTesting, screenStyles.mainMenuStyles.modal]}>
+                <Text style={[{paddingTop: 20}, {fontSize: 20}]}>Combat Game</Text>
                 <Image style={{height: 200, width: 150}} source={require('./../assets/images/swordAndShield.jpg')}/>
                 <FlatList data={data} renderItem={renderModalItem}/>
             </View>

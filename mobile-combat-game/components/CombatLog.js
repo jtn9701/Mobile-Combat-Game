@@ -12,7 +12,7 @@ const listRef = useRef(null);
     }
 
     return (
-        <View style={[globalStyles.borderForTesting, {flex: 0.4, width: "100%"}]}>
+        <View style={[globalStyles.borderForTesting, {flex: 1, width: "100%", padding: 10, marginTop: 5}]}>
             <FlatList 
                 ref={listRef}
                 data={data} 

@@ -1,4 +1,4 @@
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 import { useState, useRef } from 'react';
 
 import { screenStyles } from '../components/style-sheets/screen-styles';
@@ -82,10 +82,13 @@ const CombatArenaScreen = ({playerState, setCurrentCombatScreen, playerLevel, pl
     return (
         <View style ={[screenStyles.combatArenaStyles.container, globalStyles.background, screenStyles.combatArenaStyles.backgroundImage]}>
             <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.monsterAreaContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation]}>
-                <Text style={globalStyles.borderForTesting}>Monster goes here</Text>
-                <Text style={globalStyles.borderForTesting}>HP: {enemy.getStats().healthStat}</Text>
-                <Text style={globalStyles.borderForTesting}>Strength: {enemy.getStats().strengthStat}</Text>
-                <Text style={globalStyles.borderForTesting}>Wisdom: {enemy.getStats().wisdomStat}</Text>
+                <Image style={{height: 200, width: 200}} source={require('./../assets/images/goblin.png')}/>
+                <View style={[globalStyles.borderForTesting, {width: '50%', marginTop: 5}]}>
+                    <Text style={{textAlign: 'center'}}>GOBLIN</Text>
+                    <Text style={{textAlign: 'center'}}>HP: {enemy.getStats().healthStat}</Text>
+                    <Text style={{textAlign: 'center'}}>Strength: {enemy.getStats().strengthStat}</Text>
+                    <Text style={{textAlign: 'center'}}>Wisdom: {enemy.getStats().wisdomStat}</Text>
+                </View>
                 <CombatLog data={combatLogs}/>
             </View>
             <View style={[globalStyles.borderForTesting, screenStyles.combatArenaStyles.combatActionContainer, screenStyles.combatArenaStyles.monsterAreaContainerLocation]}>
