@@ -40,6 +40,7 @@ export const screenStyles = StyleSheet.create({
             flexDirection: 'row',
             flex: 0.15,
             width: '95%',
+            height: 70,
             justifyContent: 'space-around',
             alignItems: 'center'
         },
