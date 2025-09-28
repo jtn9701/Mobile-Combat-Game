@@ -23,28 +23,28 @@ const CombatLandingPage = () => {
     }, [playerLevel])
 
     function reducer(state, action) {
-        // TODO: Make function to clamp values to not go past min value
-        function valueClamp(){
-
+        function valueClamp(value, min = 0){
+            const num = Number(value) || 0;
+            return Math.max(min, num);
         }
 
         switch(action.statToChange){
             case 'healthStat': 
-                return {...state, healthStat: (state.healthStat + action.amount)}
+                return {...state, healthStat: valueClamp(state.healthStat + action.amount, entityConstants.DEFAULT_PLAYER_STATS.healthStat)}
             case 'strengthStat': 
-                return {...state, strengthStat: (state.strengthStat + action.amount)}
+                return {...state, strengthStat: valueClamp(state.strengthStat + action.amount, entityConstants.DEFAULT_PLAYER_STATS.strengthStat)}
             case 'wisdomStat': 
-                return {...state, wisdomStat: (state.wisdomStat + action.amount)}
+                return {...state, wisdomStat: valueClamp(state.wisdomStat + action.amount, entityConstants.DEFAULT_PLAYER_STATS.wisdomStat)}
             case 'manaStat': 
-                return {...state, manaStat: (state.manaStat + action.amount)}
+                return {...state, manaStat: valueClamp(state.manaStat + action.amount)}
             case 'defenseStat': 
-                return {...state, defenseStat: (state.defenseStat + action.amount)}
+                return {...state, defenseStat: valueClamp(state.defenseStat + action.amount)}
             case 'magicDefenseStat': 
-                return {...state, magicDefenseStat: (state.magicDefenseStat + action.amount)}
+                return {...state, magicDefenseStat: valueClamp(state.magicDefenseStat + action.amount)}
             case 'pointsToAllocate': 
-                return {...state, pointsToAllocate: ((state.pointsToAllocate) + action.amount)}
+                return {...state, pointsToAllocate: valueClamp(state.pointsToAllocate + action.amount)}
             case 'setPointsToAllocate':
-                return { ...state, pointsToAllocate: action.amount };
+                return { ...state, pointsToAllocate: valueClamp(action.amount) };
             default: return state
         }
     }
